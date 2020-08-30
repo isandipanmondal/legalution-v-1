@@ -1,0 +1,10 @@
+.txt_deepgrey{color:#6f6f6f;}
+.txt_black{color:#000000;}
+.bg-black{background-color: #000000;}
+.bg-lightgrey{background-color:#dadee1}
+
+/* Make the image fully responsive */
+  .carousel-innerabt img {
+      width: 100%;
+      height: 100%;
+  }
