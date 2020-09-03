@@ -202,21 +202,21 @@
               <img src="images/td-reg-img.jpg" alt="">
             </div>
             <div class="td-mark-rg_title">
-              <h2>Trademark Registration</h2>
+              <h2>Trademark <span class="trademark_option_label">Registration</span></h2>
                <!-- Nav tabs -->
                <div class="tab-menu">
                   <ul class="nav nav-tabs" role="tablist">
                     <li class="nav-item">
-                      <a class="nav-link active" data-toggle="tab" href="#reg">Registration</a>
+                      <a class="nav-link active trademark_options" data-price="5558" data-toggle="tab" href="#reg">Registration</a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link" data-toggle="tab" href="#ren">Renewal</a>
+                      <a class="nav-link trademark_options" data-price="5557" data-toggle="tab" href="#ren">Renewal</a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link" data-toggle="tab" href="#objt">Objection</a>
+                      <a class="nav-link trademark_options" data-price="5559" data-toggle="tab" href="#objt">Objection</a>
                     </li>
                      <li class="nav-item">
-                      <a class="nav-link" data-toggle="tab" href="#opp">Opppsition</a>
+                      <a class="nav-link trademark_options" data-price="5556" data-toggle="tab" href="#opp">Opppsition</a>
                     </li>
                   </ul>
                </div>
@@ -238,7 +238,7 @@
               </div>
               <!-- <p>The Novel Coronavirus, Covid-19 is caused by the severe acute respiratorysyndrome coronavirus-2 (SARS-CoV-2). It has also sparked fear of animpending economic crisis and recession. It has been</p> -->
               <div class="td-mark_price">
-            <h4>Rs, 5558</h4>
+            <h4>Rs, <span class="trademark_option_price">5558</span></h4>
             <h6>All Inclusive price</h6>
           </div>
             </div>
@@ -249,23 +249,24 @@
       </div>
       <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12">
        <div class="td-mark-rg_form">
-     <form action="gst_form1.html" class="needs-validation gst_frm-bodr td_frm" id="gst_form_basic_info">
-      <div class="gst_frm-text td-mark_from-text">Trademark Registration</div> 
+     <form action="gst_form1.html" class="needs-validation gst_frm-bodr td_frm" id="form_trademark">
+      <input type="hidden" class="form-control" name="trademark_option" >
+      <div class="gst_frm-text td-mark_from-text">Trademark <span class="trademark_option_label">Registration</span></div> 
       <div class="form-group ">
-      
-      <input type="text" class="form-control" id="name" name="name" required placeholder="Name">
+        
+      <input type="text" class="form-control" id="name" name="name" placeholder="Name">
       <div class="valid-feedback">Valid.</div>
       <div class="invalid-feedback">Please fill out this field.</div>
       </div>
       <div class="form-group">
       
-      <input type="text" class="form-control" id="email" name="email" required placeholder="Email">
+      <input type="text" class="form-control" id="email" name="email" placeholder="Email">
       <div class="valid-feedback">Valid.</div>
       <div class="invalid-feedback">Please fill out this field.</div>
       </div>
       <div class="form-group">
       
-      <input type="text" class="form-control" id="phone" name="phone" required placeholder="Mobile No">
+      <input type="text" class="form-control" id="phone" name="phone" placeholder="Mobile No">
       <div class="valid-feedback">Valid.</div>
       <div class="invalid-feedback">Please fill out this field.</div>
       </div>
@@ -791,96 +792,6 @@
 </div>
 </section>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <!-- Footer -->
 <div id="footer" class="container-fluid">
 	<div class="container ft1">
@@ -1074,5 +985,75 @@ $(document).ready(function(){
         $els.height(max)
     });
  </script>
+
+ <!--mrin dev section -->
+ <script src="js/jquery.validate.min.js"></script>
+ <script src="js/dev_mrin_v1.js"></script>
+ <script type="text/javascript">
+  $(document).ready(function(){
+    //trademarl label selection 
+    trademark_lebel_selection();
+    $(".trademark_options").bind('click',function(){
+      setTimeout(function(){
+        trademark_lebel_selection();
+      },1000);
+    });
+    $("#form_trademark").validate({
+      rules:{
+        name:{
+          required:true,
+          maxlength:150
+        },
+        email:{
+          required:true,
+          email:true,
+        },
+        phone:{
+          required:true,
+          digits:10
+        }
+      },
+      errorClass:'text-danger',
+      submitHandler:function(form){
+        console.log($(form).serialize());
+        console.log($(form).serializeArray());
+        let data = $(form).serializeArray();//form.serialize();
+        console.log(data);
+        doAjaxCall('trademark',data,function(error, result){
+          console.log("Error :: ", error);
+          console.log("result :: ", result);
+          if(error){
+            alert(error);
+          }
+          else{
+            //do some thing after success response
+            if(result.status==1){
+              if(result.payment_url.length > 0){
+                window.location = result.payment_url;
+              }
+            }
+            else{
+              alert(result.message);
+            }
+          }
+        });
+      }
+    });
+  });
+
+  function trademark_lebel_selection(){
+    $.each($(".trademark_options"),function(i, item){
+      if($(item).hasClass('active')){
+        let label = $(item).html();
+        let price = $(item).data('price');
+        $(".trademark_option_label").html(label);
+        $(".trademark_option_price").html(price);
+        $("input[name='trademark_option']").val(label);
+        return false;
+      }
+    });
+  }
+</script>
+ <!--end mrin dev section-->
 </body>
 </html>
