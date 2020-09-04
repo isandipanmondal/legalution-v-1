@@ -448,7 +448,7 @@ $(document).ready(function(){
     doAjaxCall(path,data,function(error, result){
         if(error){
             alert(error);
-            //window.location='apeda.html';
+            window.location='apeda.html';
         }
         else{
             if(result.status==1){
@@ -457,7 +457,7 @@ $(document).ready(function(){
             }
             else{
                 alert(result.message);
-                //window.location='apeda.html';
+                window.location='apeda.html';
             }
         }
     });
