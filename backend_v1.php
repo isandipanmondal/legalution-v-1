@@ -198,4 +198,99 @@ function free_advice($request){
     $GLOBALS['response_message']="Thank you for contacting us. We get back to you very soon.";
     return_response();
 }
+
+// apeda section 
+
+function apeda_plan($request){
+    $plan_id = isset($request["plan_id"])?$request['plan_id']:'';
+    $name = isset($request['name'])?$request['name']:'';
+    $email = isset($request['email'])?$request['email']:'';
+    $phone = isset($request['phone'])?$request['phone']:'';
+    $address = isset($request['address'])?$request['address']:'';
+    $state = isset($request['state'])?$request['state']:'';
+    $pin_code = isset($request['pin_code'])?$request['pin_code']:'';
+    $response_data=array();
+    if(!empty($plan_id)){
+        //checked price section 
+        $plan = apeda_plan_prices($plan_id);
+        $plan_name = isset($plan['name'])?$plan['name']:'';
+        $price = isset($plan['price'])?$plan['price']:0;
+        if($price>0 && !empty($plan_name)){
+            $transaction_id = transaction_key('apeda-');
+            //now send a mail to admin about the user
+            $subject="Customer looking for APEDA.";
+            $message = "Hi,\nCustomers details are as follows\n";
+            $message .="\nCustomer Name : ".$name;
+            $message .="\nCustomer Phone : ".$phone;
+            $message .="\nCustomer Email : ".$email;
+            $message .="\Plan Name : ".$plan_name;
+            $message .="\Plan Price : ".$price;
+            $message = "\nCustomer adress as follows\n";
+            $message = "\nAddress :".$address;
+            $message = "\nState :".$state;
+            $message = "\nPIN :".$pin_code;
+
+            $message = "\nTransaction ID : ".$transaction_id;
+            //now send the mail 
+            send_mail($subject,$message);
+
+            //now need to open the payment url
+            $purpose = "APEDA $plan_name - $transaction_id";
+            $payment_url = get_payment_link($price,$purpose,$name,$phone,$email);
+            $response_data['payment_url']=$payment_url;
+            $GLOBALS['response_status']=1;
+        }
+        else{
+            $GLOBALS['response_message']="FSSAI option price not found";
+        }
+    }
+    else{
+        $GLOBALS['response_message']="Invalid fssai option";
+    }
+    return_response($response_data);
+}
+
+function get_apeda_price($request){
+    $response_data=[];
+    $plan_id = isset($_GET['plan'])?$_GET['plan']:0;
+    if($plan_id>0){
+        $plan = apeda_plan_prices($plan_id);
+        if(isset($plan['name'])){
+            $price = isset($plan['price'])?$plan['price']:0;
+            $plan_price=$plan['name']." (Rs. $price)";
+            $response_data['plan_price'] = $plan_price;
+            $response_data['plan_id'] = $plan_id;
+            $GLOBALS['response_status']=1;
+        }
+        else{
+            $GLOBALS['response_message']="Invalied plan.";
+        }
+    }
+    else{
+        $GLOBALS['response_message']="Invalied acceess.";
+    }
+    return_response($response_data);
+}
+
+function apeda_plan_prices($plan_no=0){
+    $apeda_plan_prices = [
+        '1'=>array(
+            'name'=>'Basic',
+            'price'=>'7699'
+        ),
+        '2'=>array(
+            'name'=>'Premium',
+            'price'=>'17900'
+        ),
+        '1'=>array(
+            'name'=>'Standard',
+            'price'=>'8400'
+        ),
+    ];
+    if($plan_no>0){
+        return (isset($apeda_plan_prices[$plan_no]))?$apeda_plan_prices[$plan_no]:array();
+    }
+    return $apeda_plan_prices;
+}
+
 ?>
