@@ -204,18 +204,18 @@
               <img src="images/td-reg-img.jpg" alt="">5
             </div>
             <div class="td-mark-rg_title">
-              <h2>Trademark Registration</h2>
+              <h2 class="fssai_option_label">Basic Lincense</h2>
                <!-- Nav tabs -->
                <div class="tab-menu">
                   <ul class="nav nav-tabs" role="tablist">
                     <li class="nav-item">
-                      <a class="nav-link active" data-toggle="tab" href="#reg">Basic Lincense</a>
+                      <a class="nav-link active fssai_options" data-price="5556" data-toggle="tab" href="#reg">Basic Lincense</a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link" data-toggle="tab" href="#ren">State Lincense</a>
+                      <a class="nav-link fssai_options" data-price="5557" data-toggle="tab" href="#ren">State Lincense</a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link" data-toggle="tab" href="#objt">Central Lincense</a>
+                      <a class="nav-link fssai_options" data-price="5558" data-toggle="tab" href="#objt">Central Lincense</a>
                     </li>
                   </ul>
                </div>
@@ -235,7 +235,7 @@
               </div>
               <!-- <p>The Novel Coronavirus, Covid-19 is caused by the severe acute respiratorysyndrome coronavirus-2 (SARS-CoV-2). It has also sparked fear of animpending economic crisis and recession. It has been</p> -->
               <div class="td-mark_price">
-            <h4>Rs, 5558</h4>
+            <h4>Rs, <span class="fssai_option_price">5558</span></h4>
             <h6>All Inclusive price</h6>
           </div>
             </div>
@@ -243,12 +243,13 @@
           </div>
           
         </div>  <!-- td-mark_reg-end -->
-
+        <form method="post" id="form_fssai">
+          <input type="hidden" name="fssai_option" value="">
         <div class="fssai-from">
           <div class="fssai_from-box">
             <div class="fssai_from-text-head">
               <h1>FSSAI Food License From</h1>
-              <h2>Basic Lincense</h2>
+              <h2 class="fssai_option_label">Basic Lincense</h2>
             </div>
             <div class="from_sec-1">
               <div class="from-item-1 form-inline">
@@ -258,12 +259,12 @@
                
               <div class="from-item-1 form-inline">
                 <label for="email" class="mr-sm-4">Email Id</label>
-                <input type="text" class="form-control" id="email22" placeholder="" name="email">
+                <input type="text" class="form-control" id="email" placeholder="" name="email">
               </div>
 
               <div class="from-item-1 form-inline">
                 <label for="email" class="mr-sm-4">Mobile No</label>
-                <input type="text" class="form-control" id="name" placeholder="" name="name">
+                <input type="text" class="form-control" id="phone" placeholder="" name="phone">
               </div>
             </div> <!-- from_sec-1 end /-->
 
@@ -272,79 +273,76 @@
               <div class="from_sec-2-wrapper">
               <div class="from-item-2">
                 <ul>
-                  <li class="checkbox form-check_1"><input type="checkbox" id="c1" name="cb">
+                  <li class="checkbox form-check_1"><input type="checkbox" id="c1" name="activity_type" value="Does online">
                   <label for="c1"><span>Does online</span></label></li>
 
-                  <li class="checkbox form-check_1"><input type="checkbox" id="c2" name="cb">
+                  <li class="checkbox form-check_1"><input type="checkbox" id="c2" name="activity_type" value="Does">
                   <label for="c2"><span>Does </span></label></li>
 
-                  <li class="checkbox form-check_1"><input type="checkbox" id="c3" name="cb">
+                  <li class="checkbox form-check_1"><input type="checkbox" id="c3" name="activity_type" value="Does online lessons">
                   <label for="c3"><span>Does online lessons</span></label></li>
                 </ul>
               </div>
 
               <div class="from-item-2">
                 <ul>
-                  <li class="checkbox form-check_1"><input type="checkbox" id="c4" name="cb">
+                  <li class="checkbox form-check_1"><input type="checkbox" id="c4" name="activity_type" value="Lorem ipsum">
                   <label for="c4"><span>Lorem ipsum </span></label></li>
 
-                  <li class="checkbox form-check_1"><input type="checkbox" id="c5" name="cb">
+                  <li class="checkbox form-check_1"><input type="checkbox" id="c5" name="activity_type" value="Lorem ipsum">
                   <label for="c5"><span>Does  lessons</span></label></li>
 
-                  <li class="checkbox form-check_1"><input type="checkbox" id="c6" name="cb">
+                  <li class="checkbox form-check_1"><input type="checkbox" id="c6" name="activity_type" value="Lorem ipsum">
                   <label for="c6"><span>Lorem ipsum </span></label></li>
                 </ul>
               </div>
 
               <div class="from-item-2">
                 <ul>
-                  <li class="checkbox form-check_1"><input type="checkbox" id="c7" name="cb">
+                  <li class="checkbox form-check_1"><input type="checkbox" id="c7" name="activity_type" value="Lorem ipsum">
                   <label for="c7"><span>Lorem ipsum </span></label></li>
 
-                  <li class="checkbox form-check_1"><input type="checkbox" id="c8" name="cb">
+                  <li class="checkbox form-check_1"><input type="checkbox" id="c8" name="activity_type" value="Lorem ipsum">
                   <label for="c8"><span>Lorem ipsum dolor</span></label></li>
 
-                  <li class="checkbox form-check_1"><input type="checkbox" id="c9" name="cb">
+                  <li class="checkbox form-check_1"><input type="checkbox" id="c9" name="activity_type" value="Lorem ipsum">
                   <label for="c9"><span>Lorem ipsum dolor</span></label></li>
                 </ul>
               </div>
 
               <div class="from-item-2">
                 <ul>
-                  <li class="checkbox form-check_1"><input type="checkbox" id="c10" name="cb">
+                  <li class="checkbox form-check_1"><input type="checkbox" id="c10" name="activity_type" value="Lorem ipsum">
                   <label for="c10"><span>Lorem ipsum dolor</span></label></li>
 
-                  <li class="checkbox form-check_1"><input type="checkbox" id="c11" name="cb">
+                  <li class="checkbox form-check_1"><input type="checkbox" id="c11" name="activity_type" value="Lorem ipsum">
                   <label for="c11"><span>Lorem ipsum dolor</span></label></li>
 
-                  <li class="checkbox form-check_1"><input type="checkbox" id="c12" name="cb">
+                  <li class="checkbox form-check_1"><input type="checkbox" id="c12" name="activity_type" value="Lorem ipsum">
                   <label for="c12"><span>Lorem ipsum dolor</span></label></li>
                 </ul>
               </div>
 
               <div class="from-item-2">
                 <ul>
-                  <li class="checkbox form-check_1"><input type="checkbox" id="c13" name="cb">
+                  <li class="checkbox form-check_1"><input type="checkbox" id="c13" name="activity_type" value="Lorem ipsum">
                   <label for="c13"><span>Lorem ipsum </span></label></li>
 
-                  <li class="checkbox form-check_1"><input type="checkbox" id="c14" name="cb">
+                  <li class="checkbox form-check_1"><input type="checkbox" id="c14" name="activity_type" value="Lorem ipsum">
                   <label for="c14"><span>Lorem ipsum</span></label></li>
 
-                  <li class="checkbox form-check_1"><input type="checkbox" id="c15" name="cb">
+                  <li class="checkbox form-check_1"><input type="checkbox" id="c15" name="activity_type" value="Lorem ipsum">
                   <label for="c15"><span>Does </span></label></li>
                 </ul>
               </div>
 
               <div class="from-item-2">
                 <ul>
-                  <li class="checkbox form-check_1"><input type="checkbox" id="c16" name="cb">
+                  <li class="checkbox form-check_1"><input type="checkbox" id="c16" name="activity_type" value="Lorem ipsum">
                   <label for="c16"><span>Lorem ipsum dolor </span></label></li>
 
-                  <li class="checkbox form-check_1"><input type="checkbox" id="c17" name="cb">
+                  <li class="checkbox form-check_1"><input type="checkbox" id="c17" name="activity_type" value="Lorem ipsum">
                   <label for="c17"><span>Lorem ipsum </span></label></li>
-
-                  <li class="checkbox form-check_1"><input type="checkbox" id="c18" name="cb">
-                  <!-- <label for="c18"><span>Does online</span></label> --></li>
                 </ul>
               </div>
 
@@ -354,28 +352,28 @@
              <div class="from_sec-3">
               <div class="from-item-1 form-inline">
                 <label for="email" class="mr-sm-4">Name of Company</label>
-                <input type="text" class="form-control" id="name" placeholder="" name="name">
+                <input type="text" class="form-control" id="company_name" placeholder="" name="company_name">
               </div>
                
               <div class="from-item-1 form-inline">
                 <label for="email" class="mr-sm-4">Select Trunover</label>
-                <select name="serv" class="form-control valid" id="serv" aria-invalid="false">
-                    <option>Select Trunover</option>
-                    <option>RTI Application</option>
-                    <option>MSME Application</option>
-                    <option>GST Registration</option>
-                    <option>Consumer Complaint</option>
+                <select name="company_trunover" class="form-control valid" id="serv" aria-invalid="false">
+                    <option value="">Select Trunover</option>
+                    <option value="RTI Application">RTI Application</option>
+                    <option value="MSME Application">MSME Application</option>
+                    <option value="GST Registration">GST Registration</option>
+                    <option value="Consumer Complaint">Consumer Complaint</option>
                 </select>
               </div>
 
               <div class="from-item-1 form-inline">
                 <label for="email" class="mr-sm-4">Name of Goods <br> You Are Dealing</label>
-                <input type="text" class="form-control" id="name" placeholder="" name="name">
+                <input type="text" class="form-control" id="product_name" placeholder="" name="product_name">
               </div>
 
               <div class="from-item-1 form-inline">
                 <label for="email" class="mr-sm-4">Address of the <br> Bussiness</label>
-                <textarea class="form-control" id="complaint" name="complaint" rows="5"></textarea>
+                <textarea class="form-control" id="company_address" name="company_address" rows="5"></textarea>
               </div>
 
               <div class="from-item-1 form-inline">
@@ -425,11 +423,11 @@
 
               <div class="from-item-1 form-inline">
                 <label for="email" class="mr-sm-4">pin code</label>
-                <input type="text" class="form-control" id="name" placeholder="" name="name">
+                <input type="text" class="form-control" id="pin_code" placeholder="" name="pin_code">
               </div>
             </div> <!-- from_sec-3 end /-->
             <div class="text-center">
-              <input type="checkbox" id="c20" name="cb">
+              <input type="checkbox" id="c20" name="termscondition" value="1">
               <label for="c20"><span>I Accept Terms & Condition </span></label>
             </div>
             <div class="text-center">
@@ -438,6 +436,7 @@
              
           </div>
         </div>
+       </form>
           </div>
         </div>
         <div class="col-xl-5 col-lg-5 col-md-5 col-sm-12 col-12">
@@ -677,26 +676,26 @@
           </div>
       </div>
       <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-      <form action="gst_form1.html" class="needs-validation gst_frm-bodr td_frm confusd_frm" id="gst_form_basic_info">
+      <form class="needs-validation gst_frm-bodr td_frm confusd_frm" method="post" id="free_advice">
+        <input type="hidden" name="advise_for" value="fssai">
       <div class="form-group ">
       
-      <input type="text" class="form-control" id="name" name="name" required="" placeholder="Name">
+      <input type="text" class="form-control" id="name" name="name" placeholder="Name">
       <div class="valid-feedback">Valid.</div>
       <div class="invalid-feedback">Please fill out this field.</div>
       </div>
       <div class="form-group">
       
-      <input type="text" class="form-control" id="email" name="email" required="" placeholder="Email">
+      <input type="text" class="form-control" id="email" name="email" placeholder="Email">
       <div class="valid-feedback">Valid.</div>
       <div class="invalid-feedback">Please fill out this field.</div>
       </div>
       <div class="form-group">
       
-      <input type="text" class="form-control" id="phone" name="phone" required="" placeholder="Mobile No">
+      <input type="text" class="form-control" id="phone" name="phone" placeholder="Mobile No">
       <div class="valid-feedback">Valid.</div>
       <div class="invalid-feedback">Please fill out this field.</div>
       </div>
-
              
       <div class="text-center"><button type="Submit" class="btn btn-primary btn_width bg-white td-mark_btn fssai-submit-btn" style="color:#333;">Submit</button></div>
   </form>
@@ -974,5 +973,125 @@ $(document).ready(function(){
         $els.height(max)
     });
  </script>
+ <!--mrin dev section -->
+ <script src="js/jquery.validate.min.js"></script>
+ <script src="js/dev_mrin_v1.js"></script>
+ <script type="text/javascript">
+  $(document).ready(function(){
+    //fssai label selection 
+    fssai_lebel_selection();
+    $(".fssai_options").bind('click',function(){
+      setTimeout(function(){
+        fssai_lebel_selection();
+      },0000);
+    });
+
+    //only one need to be checked
+    $("input[name='activity_type']").bind('click',function(e){
+      if($(this).is(":checked")){
+        $("input[name='activity_type']").prop('checked',false);
+        $(this).prop('checked',true);
+      }
+    });
+
+    $("#form_fssai").validate({
+      rules:{
+        name:{
+          required:true,
+          maxlength:150
+        },
+        email:{
+          required:true,
+          email:true,
+        },
+        phone:{
+          required:true,
+          digits:10
+        },
+        company_name:{
+          required:true,
+          maxlength:150
+        },
+        product_name:{
+          required:true,
+          maxlength:150
+        },
+      },
+      errorClass:'text-danger',
+      submitHandler:function(form){
+        if(!$("input[name='termscondition']").is(":checked")){
+          alert("Please accept terms and condition to procced");
+          return false;
+        }
+
+        let data = $(form).serializeArray();
+        doAjaxCall('fssai',data,function(error, result){
+          if(error){
+            alert(error);
+          }
+          else{
+            //do some thing after success response
+            if(result.status==1){
+              if(result.payment_url.length > 0){
+                window.location = result.payment_url;
+              }
+            }
+            else{
+              alert(result.message);
+            }
+          }
+        });
+      }
+    });
+
+    $("#free_advice").validate({
+      rules:{
+        name:{
+          required:true,
+          maxlength:150
+        },
+        email:{
+          required:true,
+          email:true,
+        },
+        phone:{
+          required:true,
+          digits:10
+        }
+      },
+      errorClass:'text-danger',
+      submitHandler:function(form){
+        let data = $(form).serializeArray();
+        doAjaxCall('free_advice',data,function(error, result){
+          if(error){
+            alert(error);
+          }
+          else{
+            alert(result.message);
+            //do some thing after success response
+            if(result.status==1){
+              form.reset();
+            }
+          }
+        });
+      }
+    });
+
+  });
+
+  function fssai_lebel_selection(){
+    $.each($(".fssai_options"),function(i, item){
+      if($(item).hasClass('active')){
+        let label = $(item).html();
+        let price = $(item).data('price');
+        $(".fssai_option_label").html(label);
+        $(".fssai_option_price").html(price);
+        $("input[name='fssai_option']").val(label);
+        return false;
+      }
+    });
+  }
+</script>
+ <!--end mrin dev section-->
 </body>
 </html>

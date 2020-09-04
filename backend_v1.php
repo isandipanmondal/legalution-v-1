@@ -115,4 +115,87 @@ function trademark($request){
     return_response($response_data);
 }
 
+function fssai($request){
+    $fssai_option = isset($request['fssai_option'])?$request['fssai_option']:'';
+    $name = isset($request['name'])?$request['name']:'';
+    $email = isset($request['email'])?$request['email']:'';
+    $phone = isset($request['phone'])?$request['phone']:'';
+    //company details
+    $activity_type = isset($request['activity_type'])?$request['activity_type']:'';
+    $company_name = isset($request['company_name'])?$request['company_name']:'';
+    $company_trunover = isset($request['company_trunover'])?$request['company_trunover']:'';
+    $product_name = isset($request['product_name'])?$request['product_name']:'';
+    $company_address = isset($request['company_address'])?$request['company_address']:'';
+    $state = isset($request['state'])?$request['state']:'';
+    $pin_code = isset($request['pin_code'])?$request['pin_code']:'';
+    //set trade mark prices 
+    $prices = array(
+        'basic lincense'=>'5556',
+        'state lincense'=>'5557',
+        'central lincense'=>'5558',
+    );
+    $response_data=array();
+    if(!empty($fssai_option)){
+        //checked price section 
+        $price = isset($prices[strtolower($fssai_option)])?$prices[strtolower($fssai_option)]:0;
+        if($price>0){
+            $transaction_id = transaction_key('FSSAI-');
+            //now send a mail to admin about the user
+            $subject="Customer looking for FSSAI.";
+            $message = "Hi,\nCustomers details are as follows\n";
+            $message .="\nCustomer Name : ".$name;
+            $message .="\nCustomer Phone : ".$phone;
+            $message .="\nCustomer Email : ".$email;
+            $message .="\FSSAI For : ".$fssai_option;
+            $message = "\nCustomer Company details as follows\n";
+            $message = "\nCompany Name : ".$company_name;
+            $message = "\nCompany Trunover : ".$company_trunover;
+            $message = "\nProduct Name : ".$product_name;
+            $message = "\nAddress :".$company_address;
+            $message = "\nState :".$state;
+            $message = "\nPIN :".$pin_code;
+            $message = "\nType Of Activity :".$activity_type;
+
+            $message = "\nTransaction ID : ".$transaction_id;
+            //now send the mail 
+            send_mail($subject,$message);
+
+            //now need to open the payment url
+            $purpose = "FSSAI $fssai_option - $transaction_id";
+            $payment_url = get_payment_link($price,$purpose,$name,$phone,$email);
+            $response_data['payment_url']=$payment_url;
+            $GLOBALS['response_status']=1;
+        }
+        else{
+            $GLOBALS['response_message']="FSSAI option price not found";
+        }
+    }
+    else{
+        $GLOBALS['response_message']="Invalid fssai option";
+    }
+    return_response($response_data);
+}
+
+// feer advices 
+function free_advice($request){
+    $advice_for = isset($request["advise_for"])?$request['advise_for']:'';
+    $name = isset($request['name'])?$request['name']:'';
+    $email = isset($request['email'])?$request['email']:'';
+    $phone = isset($request['phone'])?$request['phone']:'';
+    
+    //now send a mail to admin about the user
+    $subject="Customer looking for advisore consultation";
+    $message = "Hi,\nCustomers details are as follows\n";
+    $message .="\nCustomer Name : ".$name;
+    $message .="\nCustomer Phone : ".$phone;
+    $message .="\nCustomer Email : ".$email;
+    if(!empty($advice_for)){
+        $message = "\n consultation on ".ucwords($advice_for);
+    }
+    //now send the mail 
+    send_mail($subject,$message);
+    $GLOBALS['response_status']=1;
+    $GLOBALS['response_message']="Thank you for contacting us. We get back to you very soon.";
+    return_response();
+}
 ?>
