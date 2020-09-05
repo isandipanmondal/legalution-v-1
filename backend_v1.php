@@ -68,18 +68,15 @@ function transaction_key($key_name=""){
 }
 
 //calling function 
+
+// TRADEMARK SECTION
 function trademark($request){
     $trademark_option = isset($request['trademark_option'])?$request['trademark_option']:'';
     $name = isset($request['name'])?$request['name']:'';
     $email = isset($request['email'])?$request['email']:'';
     $phone = isset($request['phone'])?$request['phone']:'';
     //set trade mark prices 
-    $prices = array(
-        'registration'=>'5558',
-        'renewal'=>'5557',
-        'objection'=>'5559',
-        'opppsition'=>'5556',
-    );
+    $prices = trademark_plan_prices(1);//array formation price
     $response_data=array();
     if(!empty($trademark_option)){
         //checked price section 
@@ -115,6 +112,123 @@ function trademark($request){
     return_response($response_data);
 }
 
+function trademark_plan($request){
+    $plan_id = isset($request["plan_id"])?$request['plan_id']:'';
+    $name = isset($request['name'])?$request['name']:'';
+    $email = isset($request['email'])?$request['email']:'';
+    $phone = isset($request['phone'])?$request['phone']:'';
+    $address = isset($request['address'])?$request['address']:'';
+    $state = isset($request['state'])?$request['state']:'';
+    $pin_code = isset($request['pin_code'])?$request['pin_code']:'';
+    $company_name = isset($request['company_name'])?$request['company_name']:'';
+    $gst_no = isset($request['gst_no'])?$request['gst_no']:'';
+    $response_data=array();
+    if(!empty($plan_id)){
+        //checked price section 
+        $plan = trademark_plan_prices(2,$plan_id);
+        $plan_name = isset($plan['name'])?$plan['name']:'';
+        $price = isset($plan['price'])?$plan['price']:0;
+        if($price>0 && !empty($plan_name)){
+            $transaction_id = transaction_key('TRD-');
+            //now send a mail to admin about the user
+            $subject="Customer looking for trademark.";
+            $message = "Hi,\nCustomers details are as follows\n";
+            $message .="\nCustomer Name : ".$name;
+            $message .="\nCustomer Phone : ".$phone;
+            $message .="\nCustomer Email : ".$email;
+            $message .="\Plan Name : ".$plan_name;
+            $message .="\Plan Price : ".$price;
+            $message = "\nCustomer adress as follows\n";
+            $message = "\nAddress :".$address;
+            $message = "\nState :".$state;
+            $message = "\nPIN :".$pin_code;
+            $message = "\nCustomer company details as follows\n";
+            $message = "\nCompany Name :".$company_name;
+            $message = "\nGST No. :".$gst_no;
+
+            $message = "\nTransaction ID : ".$transaction_id;
+            //now send the mail 
+            send_mail($subject,$message);
+
+            //now need to open the payment url
+            $purpose = "Trademark $plan_name - $transaction_id";
+            $payment_url = get_payment_link($price,$purpose,$name,$phone,$email);
+            $response_data['payment_url']=$payment_url;
+            $GLOBALS['response_status']=1;
+        }
+        else{
+            $GLOBALS['response_message']="Trademark plan price not found";
+        }
+    }
+    else{
+        $GLOBALS['response_message']="Invalid plan";
+    }
+    return_response($response_data);
+}
+
+function trademark_plan_prices($priceType=1,$plan_no=0){
+    if($priceType==2){
+        $plan_prices = [
+            '1'=>array(
+                'name'=>'Registration',
+                'price'=>'5558'
+            ),
+            '2'=>array(
+                'name'=>'Renewal',
+                'price'=>'5557'
+            ),
+            '3'=>array(
+                'name'=>'Objection',
+                'price'=>'5559'
+            ),
+            '4'=>array(
+                'name'=>'Opppsition',
+                'price'=>'5556'
+            ),
+        ];
+        if($plan_no>0){
+            return (isset($plan_prices[$plan_no]))?$plan_prices[$plan_no]:array();
+        }
+    }
+    else{
+        $plan_prices = array(
+            'registration'=>'5558',
+            'renewal'=>'5557',
+            'objection'=>'5559',
+            'opppsition'=>'5556',
+        );
+        if(!empty($plan_no)){
+            $plan_no = strtolower($plan_no);
+            return (isset($plan_prices[$plan_no]))?$plan_prices[$plan_no]:'';
+        }
+    }
+    
+    return $plan_prices;
+}
+
+function get_trademark_price($request){
+    $response_data=[];
+    $plan_id = isset($_GET['plan'])?$_GET['plan']:0;
+    if($plan_id>0){
+        $plan = trademark_plan_prices(2,$plan_id);
+        if(isset($plan['name'])){
+            $price = isset($plan['price'])?$plan['price']:0;
+            $plan_price=$plan['name']." (Rs. $price)";
+            $response_data['plan_price'] = $plan_price;
+            $response_data['plan_id'] = $plan_id;
+            $GLOBALS['response_status']=1;
+        }
+        else{
+            $GLOBALS['response_message']="Invalied plan.";
+        }
+    }
+    else{
+        $GLOBALS['response_message']="Invalied acceess.";
+    }
+    return_response($response_data);
+}
+
+// FSSAI SECTION
 function fssai($request){
     $fssai_option = isset($request['fssai_option'])?$request['fssai_option']:'';
     $name = isset($request['name'])?$request['name']:'';
@@ -176,7 +290,7 @@ function fssai($request){
     return_response($response_data);
 }
 
-// feer advices 
+// fee advices 
 function free_advice($request){
     $advice_for = isset($request["advise_for"])?$request['advise_for']:'';
     $name = isset($request['name'])?$request['name']:'';
@@ -199,7 +313,7 @@ function free_advice($request){
     return_response();
 }
 
-// apeda section 
+// APEDA SECTION 
 
 function apeda_plan($request){
     $plan_id = isset($request["plan_id"])?$request['plan_id']:'';
@@ -241,11 +355,11 @@ function apeda_plan($request){
             $GLOBALS['response_status']=1;
         }
         else{
-            $GLOBALS['response_message']="FSSAI option price not found";
+            $GLOBALS['response_message']="APEDA plan price not found";
         }
     }
     else{
-        $GLOBALS['response_message']="Invalid fssai option";
+        $GLOBALS['response_message']="Invalid plan";
     }
     return_response($response_data);
 }
@@ -282,7 +396,7 @@ function apeda_plan_prices($plan_no=0){
             'name'=>'Premium',
             'price'=>'17900'
         ),
-        '1'=>array(
+        '3'=>array(
             'name'=>'Standard',
             'price'=>'8400'
         ),
