@@ -4,6 +4,40 @@ let basePath='backend_v1.php?func=';
 $(document).ready(function(){
     getSiteBasePath();
     console.log("SiteBasePath :: ",baseUrl);
+    if($(document).find("#free_advice")){
+        $("#free_advice").validate({
+            rules:{
+              name:{
+                required:true,
+                maxlength:150
+              },
+              email:{
+                required:true,
+                email:true,
+              },
+              phone:{
+                required:true,
+                digits:10
+              }
+            },
+            errorClass:'text-danger',
+            submitHandler:function(form){
+              let data = $(form).serializeArray();
+              doAjaxCall('free_advice',data,function(error, result){
+                if(error){
+                  alert(error);
+                }
+                else{
+                  alert(result.message);
+                  //do some thing after success response
+                  if(result.status==1){
+                    form.reset();
+                  }
+                }
+              });
+            }
+        });
+    }
 });
 
 //basepath retrive

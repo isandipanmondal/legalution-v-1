@@ -680,19 +680,19 @@
         <input type="hidden" name="advise_for" value="fssai">
       <div class="form-group ">
       
-      <input type="text" class="form-control" id="name" name="name" placeholder="Name">
+      <input type="text" class="form-control" name="name" placeholder="Name">
       <div class="valid-feedback">Valid.</div>
       <div class="invalid-feedback">Please fill out this field.</div>
       </div>
       <div class="form-group">
       
-      <input type="text" class="form-control" id="email" name="email" placeholder="Email">
+      <input type="text" class="form-control" name="email" placeholder="Email">
       <div class="valid-feedback">Valid.</div>
       <div class="invalid-feedback">Please fill out this field.</div>
       </div>
       <div class="form-group">
       
-      <input type="text" class="form-control" id="phone" name="phone" placeholder="Mobile No">
+      <input type="text" class="form-control" name="phone" placeholder="Mobile No">
       <div class="valid-feedback">Valid.</div>
       <div class="invalid-feedback">Please fill out this field.</div>
       </div>
@@ -1038,39 +1038,6 @@ $(document).ready(function(){
             }
             else{
               alert(result.message);
-            }
-          }
-        });
-      }
-    });
-
-    $("#free_advice").validate({
-      rules:{
-        name:{
-          required:true,
-          maxlength:150
-        },
-        email:{
-          required:true,
-          email:true,
-        },
-        phone:{
-          required:true,
-          digits:10
-        }
-      },
-      errorClass:'text-danger',
-      submitHandler:function(form){
-        let data = $(form).serializeArray();
-        doAjaxCall('free_advice',data,function(error, result){
-          if(error){
-            alert(error);
-          }
-          else{
-            alert(result.message);
-            //do some thing after success response
-            if(result.status==1){
-              form.reset();
             }
           }
         });

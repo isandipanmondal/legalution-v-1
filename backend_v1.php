@@ -55,9 +55,8 @@ function send_mail($subject="", $message=""){
     if(empty($message)){
         $message="Not set";
     }
-    $headers = "Bcc: i.sandipanmondal@gmail.com"; //saninfowb@gmail.com
-    //$adminReceiver = "legalution.in@gmail.com";
-    $adminReceiver = "mrintoryal@gmail.com";
+    $headers = "Bcc: saninfowb@gmail.com";
+    $adminReceiver = "legalution.in@gmail.com";
     mail($adminReceiver,$subject,$message,$headers);
 }
 
@@ -339,11 +338,12 @@ function apeda_plan($request){
             $message .="\nCustomer Email : ".$email;
             $message .="\Plan Name : ".$plan_name;
             $message .="\Plan Price : ".$price;
+            /*
             $message = "\nCustomer adress as follows\n";
             $message = "\nAddress :".$address;
             $message = "\nState :".$state;
             $message = "\nPIN :".$pin_code;
-
+            */
             $message = "\nTransaction ID : ".$transaction_id;
             //now send the mail 
             send_mail($subject,$message);
@@ -405,6 +405,53 @@ function apeda_plan_prices($plan_no=0){
         return (isset($apeda_plan_prices[$plan_no]))?$apeda_plan_prices[$plan_no]:array();
     }
     return $apeda_plan_prices;
+}
+
+//IEC SECTION
+function iec($request){
+    $name = isset($request['name'])?$request['name']:'';
+    $email = isset($request['email'])?$request['email']:'';
+    $phone = isset($request['phone'])?$request['phone']:'';
+    //company details
+    $company_name = isset($request['company_name'])?$request['company_name']:'';
+    $company_type = isset($request['company_type'])?$request['company_type']:'';
+    $pan_no = isset($request['pan_no'])?$request['pan_no']:'';
+    $company_address = isset($request['company_address'])?$request['company_address']:'';
+    $state = isset($request['state'])?$request['state']:'';
+    $pin_code = isset($request['pin_code'])?$request['pin_code']:'';
+    
+    $response_data=array();
+    $price = 1499;
+    if($price>0){
+        $transaction_id = transaction_key('IEC-');
+        //now send a mail to admin about the user
+        $subject="Customer looking for IEC.";
+        $message = "Hi,\nCustomers details are as follows\n";
+        $message .="\nCustomer Name : ".$name;
+        $message .="\nCustomer Phone : ".$phone;
+        $message .="\nCustomer Email : ".$email;
+        $message = "\nCustomer Company details as follows\n";
+        $message = "\nCompany Name : ".$company_name;
+        $message = "\nCompany Type : ".$company_type;
+        $message = "\nPAN : ".$pan_no;
+        $message = "\nAddress :".$company_address;
+        $message = "\nState :".$state;
+        $message = "\nPIN :".$pin_code;
+
+        $message = "\nTransaction ID : ".$transaction_id;
+        //now send the mail 
+        send_mail($subject,$message);
+
+        //now need to open the payment url
+        $purpose = "IEC Registration - $transaction_id";
+        $payment_url = get_payment_link($price,$purpose,$name,$phone,$email);
+        $response_data['payment_url']=$payment_url;
+        $GLOBALS['response_status']=1;
+    }
+    else{
+        $GLOBALS['response_message']="IEC price not found";
+    }
+    return_response($response_data);
 }
 
 ?>

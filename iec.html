@@ -236,6 +236,7 @@
         </div>  <!-- td-mark_reg-end -->
 
         <div class="fssai-from">
+          <form action="" method="POST" id="form_iec">
           <div class="fssai_from-box">
             <div class="fssai_from-text-head">
               <h1>IEC License Registration Form</h1>
@@ -244,114 +245,30 @@
             <div class="from_sec-1">
               <div class="from-item-1 form-inline">
                 <label for="email" class="mr-sm-4">Name of Owner</label>
-                <input type="text" class="form-control" id="name" placeholder="" name="name">
+                <input type="text" class="form-control" placeholder="" name="name">
               </div>
                
               <div class="from-item-1 form-inline">
                 <label for="email" class="mr-sm-4">Email Id</label>
-                <input type="text" class="form-control" id="email22" placeholder="" name="email">
+                <input type="text" class="form-control" placeholder="" name="email">
               </div>
 
               <div class="from-item-1 form-inline">
                 <label for="email" class="mr-sm-4">Mobile No</label>
-                <input type="text" class="form-control" id="name" placeholder="" name="name">
+                <input type="text" class="form-control" placeholder="" name="phone">
               </div>
             </div> <!-- from_sec-1 end /-->
-
-           <!--  <div class="from_sec-2">
-              <h2>Type of Activity </h2>
-              <div class="from_sec-2-wrapper">
-              <div class="from-item-2">
-                <ul>
-                  <li class="checkbox form-check_1"><input type="checkbox" id="c1" name="cb">
-                  <label for="c1"><span>Does online</span></label></li>
-
-                  <li class="checkbox form-check_1"><input type="checkbox" id="c2" name="cb">
-                  <label for="c2"><span>Does </span></label></li>
-
-                  <li class="checkbox form-check_1"><input type="checkbox" id="c3" name="cb">
-                  <label for="c3"><span>Does online lessons</span></label></li>
-                </ul>
-              </div>
-
-              <div class="from-item-2">
-                <ul>
-                  <li class="checkbox form-check_1"><input type="checkbox" id="c4" name="cb">
-                  <label for="c4"><span>Lorem ipsum </span></label></li>
-
-                  <li class="checkbox form-check_1"><input type="checkbox" id="c5" name="cb">
-                  <label for="c5"><span>Does  lessons</span></label></li>
-
-                  <li class="checkbox form-check_1"><input type="checkbox" id="c6" name="cb">
-                  <label for="c6"><span>Lorem ipsum </span></label></li>
-                </ul>
-              </div>
-
-              <div class="from-item-2">
-                <ul>
-                  <li class="checkbox form-check_1"><input type="checkbox" id="c7" name="cb">
-                  <label for="c7"><span>Lorem ipsum </span></label></li>
-
-                  <li class="checkbox form-check_1"><input type="checkbox" id="c8" name="cb">
-                  <label for="c8"><span>Lorem ipsum dolor</span></label></li>
-
-                  <li class="checkbox form-check_1"><input type="checkbox" id="c9" name="cb">
-                  <label for="c9"><span>Lorem ipsum dolor</span></label></li>
-                </ul>
-              </div>
-
-              <div class="from-item-2">
-                <ul>
-                  <li class="checkbox form-check_1"><input type="checkbox" id="c10" name="cb">
-                  <label for="c10"><span>Lorem ipsum dolor</span></label></li>
-
-                  <li class="checkbox form-check_1"><input type="checkbox" id="c11" name="cb">
-                  <label for="c11"><span>Lorem ipsum dolor</span></label></li>
-
-                  <li class="checkbox form-check_1"><input type="checkbox" id="c12" name="cb">
-                  <label for="c12"><span>Lorem ipsum dolor</span></label></li>
-                </ul>
-              </div>
-
-              <div class="from-item-2">
-                <ul>
-                  <li class="checkbox form-check_1"><input type="checkbox" id="c13" name="cb">
-                  <label for="c13"><span>Lorem ipsum </span></label></li>
-
-                  <li class="checkbox form-check_1"><input type="checkbox" id="c14" name="cb">
-                  <label for="c14"><span>Lorem ipsum</span></label></li>
-
-                  <li class="checkbox form-check_1"><input type="checkbox" id="c15" name="cb">
-                  <label for="c15"><span>Does </span></label></li>
-                </ul>
-              </div>
-
-              <div class="from-item-2">
-                <ul>
-                  <li class="checkbox form-check_1"><input type="checkbox" id="c16" name="cb">
-                  <label for="c16"><span>Lorem ipsum dolor </span></label></li>
-
-                  <li class="checkbox form-check_1"><input type="checkbox" id="c17" name="cb">
-                  <label for="c17"><span>Lorem ipsum </span></label></li>
-
-                  <li class="checkbox form-check_1"><input type="checkbox" id="c18" name="cb">
-                   <label for="c18"><span>Does online</span></label></li>
-                </ul>
-              </div>
-
-            </div>
-            </div> --><!-- from_sec-2 end/ -->
 
              <div class="from_sec-3">
               <div class="from-item-1 form-inline">
                 <label for="email" class="mr-sm-4">Name of Company</label>
-                <input type="text" class="form-control" id="name" placeholder="" name="name">
+                <input type="text" class="form-control" placeholder="" name="company_name">
               </div>
                
               <div class="from-item-1 form-inline">
-                <label for="email" class="mr-sm-4">Type of<br>Organisation</label>
-                <select name="serv" class="form-control valid" id="serv" aria-invalid="false">
-                    <option>Type of Organisation</option>
+                <label for="company_type" class="mr-sm-4">Type of<br>Organisation</label>
+                <select name="company_type" class="form-control valid" aria-invalid="false">
+                    <option value="">Type of Organisation</option>
                     <option>RTI Application</option>
                     <option>MSME Application</option>
                     <option>GST Registration</option>
@@ -361,17 +278,17 @@
 
               <div class="from-item-1 form-inline">
                 <label for="email" class="mr-sm-4">PAN Number</label>
-                <input type="text" class="form-control" id="name" placeholder="" name="name">
+                <input type="text" class="form-control" placeholder="" name="pan_no">
               </div>
 
               <div class="from-item-1 form-inline">
                 <label for="email" class="mr-sm-4">Address of the <br> Bussiness</label>
-                <textarea class="form-control" id="complaint" name="complaint" rows="5"></textarea>
+                <textarea class="form-control" name="company_address" rows="5"></textarea>
               </div>
 
               <div class="from-item-1 form-inline">
                 <label for="email" class="mr-sm-4">Select State</label>
-                <select type="text" class="form-control valid" id="state" name="state" aria-invalid="false">
+                <select type="text" class="form-control valid" name="state" aria-invalid="false">
                   <option>Andhra Pradesh</option>
                   <option>Arunachal Pradesh</option>
                   <option>Assam</option>
@@ -415,12 +332,12 @@
               </div>
 
               <div class="from-item-1 form-inline">
-                <label for="email" class="mr-sm-4">pin code</label>
-                <input type="text" class="form-control" id="name" placeholder="" name="name">
+                <label for="pin_code" class="mr-sm-4">pin code</label>
+                <input type="text" class="form-control" placeholder="" name="pin_code">
               </div>
             </div> <!-- from_sec-3 end /-->
             <div class="text-center">
-              <input type="checkbox" id="c20" name="cb">
+              <input type="checkbox" id="c20" name="termscondition" value="1">
               <label for="c20"><span>I Accept Terms & Condition </span></label>
             </div>
             <div class="text-center">
@@ -428,6 +345,7 @@
             </div>
              
           </div>
+        </form>
         </div>
           </div>
         </div>
@@ -692,22 +610,23 @@
           </div>
       </div>
       <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-      <form action="gst_form1.html" class="needs-validation gst_frm-bodr td_frm confusd_frm" id="gst_form_basic_info">
+      <form action="" class="needs-validation gst_frm-bodr td_frm confusd_frm" method="post" id="free_advice">
+        <input type="hidden" name="advise_for" value="IEC">
       <div class="form-group ">
       
-      <input type="text" class="form-control" id="name" name="name" required="" placeholder="Name">
+      <input type="text" class="form-control" name="name" placeholder="Name">
       <div class="valid-feedback">Valid.</div>
       <div class="invalid-feedback">Please fill out this field.</div>
       </div>
       <div class="form-group">
       
-      <input type="text" class="form-control" id="email" name="email" required="" placeholder="Email">
+      <input type="text" class="form-control" name="email" placeholder="Email">
       <div class="valid-feedback">Valid.</div>
       <div class="invalid-feedback">Please fill out this field.</div>
       </div>
       <div class="form-group">
       
-      <input type="text" class="form-control" id="phone" name="phone" required="" placeholder="Mobile No">
+      <input type="text" class="form-control" name="phone" placeholder="Mobile No">
       <div class="valid-feedback">Valid.</div>
       <div class="invalid-feedback">Please fill out this field.</div>
       </div>
@@ -1017,5 +936,64 @@ $(document).ready(function(){
         $els.height(max)
     });
  </script>
+ <!--mrin dev section -->
+ <script src="js/jquery.validate.min.js"></script>
+ <script src="js/dev_mrin_v1.js"></script>
+ <script type="text/javascript">
+  $(document).ready(function(){
+    $("#form_iec").validate({
+      rules:{
+        name:{
+          required:true,
+          maxlength:150
+        },
+        email:{
+          required:true,
+          email:true,
+        },
+        phone:{
+          required:true,
+          digits:10
+        },
+        company_name:{
+          required:true,
+          maxlength:150
+        },
+        pan_no:{
+          required:true,
+          minlength:10,
+          maxlength:10
+        },
+      },
+      errorClass:'text-danger',
+      submitHandler:function(form){
+        if(!$("input[name='termscondition']").is(":checked")){
+          alert("Please accept terms and condition to procced");
+          return false;
+        }
+        let data = $(form).serializeArray();
+        doAjaxCall('iec',data,function(error, result){
+          if(error){
+            alert(error);
+          }
+          else{
+            //do some thing after success response
+            if(result.status==1){
+              if(result.payment_url.length > 0){
+                window.location = result.payment_url;
+              }
+            }
+            else{
+              alert(result.message);
+            }
+          }
+        });
+      }
+    });
+
+  });
+
+</script>
+ <!--end mrin dev section-->
 </body>
 </html>

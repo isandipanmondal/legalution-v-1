@@ -190,28 +190,28 @@
       <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
         <div class="iso-banner_form">
              <div class="td-mark-rg_form">
-     <form action="gst_form1.html" class="needs-validation gst_frm-bodr td_frm iso_from" id="gst_form_basic_info">
+     <form action="" method="POST" class="needs-validation gst_frm-bodr td_frm iso_from" id="form_iso">
+      <input type="hidden" name="advise_for" value="ISO">
       <div class="gst_frm-text td-mark_from-text iso-form-text">Get Inbox Now Proposal & Sample ISO Certi & cate</div> 
       <div class="form-group ">
       
-      <input type="text" class="form-control" id="name" name="name" required placeholder="Name">
+      <input type="text" class="form-control" name="name" placeholder="Name">
       <div class="valid-feedback">Valid.</div>
       <div class="invalid-feedback">Please fill out this field.</div>
       </div>
       <div class="form-group">
       
-      <input type="text" class="form-control" id="email" name="email" required placeholder="Email">
+      <input type="text" class="form-control" name="email" placeholder="Email">
       <div class="valid-feedback">Valid.</div>
       <div class="invalid-feedback">Please fill out this field.</div>
       </div>
       <div class="form-group">
       
-      <input type="text" class="form-control" id="phone" name="phone" required placeholder="Mobile No">
+      <input type="text" class="form-control" name="phone" placeholder="Mobile No">
       <div class="valid-feedback">Valid.</div>
       <div class="invalid-feedback">Please fill out this field.</div>
       </div>
 
-             
       <div class="text-center"><button type="Submit" class="btn btn-primary btn_width bg-white td-mark_btn" style="color:#333;">GET STARTED</button></div>
   </form> 
       </div>
@@ -479,22 +479,23 @@
           </div>
       </div>
       <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-      <form action="gst_form1.html" class="needs-validation gst_frm-bodr td_frm confusd_frm" id="gst_form_basic_info">
+      <form action="" method="POST" class="needs-validation gst_frm-bodr td_frm confusd_frm" id="free_advice">
+        <input type="hidden" name="advise_for" value="ISO">
       <div class="form-group ">
       
-      <input type="text" class="form-control" id="name" name="name" required="" placeholder="Name">
+      <input type="text" class="form-control" name="name" placeholder="Name">
       <div class="valid-feedback">Valid.</div>
       <div class="invalid-feedback">Please fill out this field.</div>
       </div>
       <div class="form-group">
       
-      <input type="text" class="form-control" id="email" name="email" required="" placeholder="Email">
+      <input type="text" class="form-control" name="email" placeholder="Email">
       <div class="valid-feedback">Valid.</div>
       <div class="invalid-feedback">Please fill out this field.</div>
       </div>
       <div class="form-group">
       
-      <input type="text" class="form-control" id="phone" name="phone" required="" placeholder="Mobile No">
+      <input type="text" class="form-control" name="phone" placeholder="Mobile No">
       <div class="valid-feedback">Valid.</div>
       <div class="invalid-feedback">Please fill out this field.</div>
       </div>
@@ -1060,5 +1061,47 @@ $(document).ready(function(){
     });
    });
  </script>
+
+ <!--mrin dev section -->
+ <script src="js/jquery.validate.min.js"></script>
+ <script src="js/dev_mrin_v1.js"></script>
+ <script type="text/javascript">
+  $(document).ready(function(){
+    $("#form_iso").validate({
+      rules:{
+        name:{
+          required:true,
+          maxlength:150
+        },
+        email:{
+          required:true,
+          email:true,
+        },
+        phone:{
+          required:true,
+          digits:10
+        }
+      },
+      errorClass:'text-danger',
+      submitHandler:function(form){
+        let data = $(form).serializeArray();
+        doAjaxCall('free_advice',data,function(error, result){
+          if(error){
+            alert(error);
+          }
+          else{
+            alert(result.message);
+            //do some thing after success response
+            if(result.status==1){
+              form.reset();
+            }
+          }
+        });
+      }
+    });
+  });
+
+</script>
+ <!--end mrin dev section-->
 </body>
 </html>
