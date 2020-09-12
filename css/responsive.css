@@ -204,6 +204,7 @@ margin-right: 152px;
 /* ********td-mark ***********/
  .tab-menu ul li a {  
     padding: 5px 11px;
+    font-size: 13px;
 }
 .td-mark-rg_form .td-mark_from-text {
     font-size: 21px;
@@ -217,12 +218,25 @@ margin-right: 152px;
 .wht-can-reg-td-mark_item {
     padding-top: 0;
 }
+.td-mark-rg_head .img-holder {
+    height: 123px;
+}
+.from-item-1 .form-control {
+    width: 57%;
+}
+
 /******* fssai *********/
 .pane22-head h3{
   font-size: 23px;
 }
 .apeda-catagory-box{
   height: 200px;
+}
+.ice-license-img .img-holder {
+    height: 166px;
+}
+.ice-whn-code h2 {
+    font-size: 27px;
 }
 }
 
@@ -565,6 +579,25 @@ height: 100%;
 }
 .prm-fees{
   transform: none;
+}
+.confusd_frm {
+    max-width: 100%;
+}
+.ice_img {
+    margin-top: 15px;
+    height: 100%;
+}
+.ice-license-img .img-holder {
+    height: 187px;
+}
+.req1 input[type="checkbox"] + label:before {
+    width: 28px;
+}
+.req2 input[type="checkbox"] + label:before {
+    width: 28px;
+}
+.req3 input[type="checkbox"] + label:before {
+    width: 33px;
 }
 }
 
@@ -1142,6 +1175,27 @@ font-size: 20px;
 .fees:hover {
     transform: none;
 }
+.iec-img{
+  order: 1;
+}
+.iec-rg_head .img-holder img {
+    width: 100%;   
+}
+.ice_img {
+    margin-top: 15px;
+    height: 100%;
+    /* text-align: center; */
+}
+.iec-rg_head{
+  flex-direction: column;
+  align-items: center;
+}
+.iec-req-p p{
+  font-size: 14px;
+}
+.iso-document_requd {
+    padding: 0;
+}
 }
 
 @media only screen and (max-width: 667px){
@@ -1690,6 +1744,9 @@ font-size: 20px;
 .carousel-inner {
   height: auto;
 }
+.iso-banner_form {
+    justify-content: center;
+}
 
 }
 
@@ -1747,6 +1804,9 @@ font-size: 20px;
 }
 /* ================== 22-8-20 ====================*/
  /* ********td-mark ***********/
+ .ice-whn-code h2 {
+    font-size: 25px;
+}
  .td-mark-rg_form{
   padding-top: 40px;
  }
@@ -1884,6 +1944,18 @@ font-size: 20px;
 .prm-fees{
   transform: none;
 }
+.iso_from {
+    width: 100%;
+}
+.req1 input[type="checkbox"] + label:before {
+    width: 49px;
+}
+.req2 input[type="checkbox"] + label:before {
+    width: 40px;
+}
+.req3 input[type="checkbox"] + label:before {
+    width: 61px;
+}
 }
 @media only screen and (max-width: 380px){
  .sear-main-box {
@@ -1895,6 +1967,18 @@ font-size: 20px;
 }
 /* ================== 22-8-20 ====================*/
  /* ********td-mark ***********/
+ .req1 input[type="checkbox"] + label:before {
+    width: 49px;
+}
+.req2 input[type="checkbox"] + label:before {
+    width: 40px;
+}
+.req3 input[type="checkbox"] + label:before {
+    width: 61px;
+}
+ .ice-whn-code h2 {
+    font-size: 25px;
+}
  .td-mark-rg_form{
   padding-top: 40px;
  }
@@ -2032,6 +2116,10 @@ font-size: 20px;
 .prm-fees{
   transform: none;
 }
+.iso_from {
+    width: 100%;
+}
+
 }
 
 @media only screen and (max-width: 360px){
@@ -2089,5 +2177,8 @@ font-size: 20px;
 }
 .tab-menu ul {
     justify-content: space-between;
+}
+.iso_from {
+    width: 100%;
 }
 }
