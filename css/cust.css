@@ -23,7 +23,7 @@
 
  .sticky .navbar-brand {
    display: flex;
-    flex-grow: 12;
+    flex-grow: 6;
 }
 .sticky .navbar-brand img{
    margin-left: 100px;
@@ -92,7 +92,7 @@
 } */
 .color_change{
    color: #f5ecec;
-    margin: -29px 501px;
+    margin: -29px 647px;
 }
 
 /*------------------Navbar----------------------*/
@@ -698,7 +698,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2a91ff', end
     right: 2.5%;
 }
 .english{
-     margin-top: 10px;
+     margin-top: 14px;
     display: inline-flex;
     float: right;
 }
@@ -1755,7 +1755,8 @@ padding: 10px;
     width: 70px;
     height: 38px;
     overflow: hidden;
-    background: #0807a1;
+    /* background: #0807a1; */
+    background-image: linear-gradient(to bottom,#0807a1, #0c69f5);
     margin-right: 15px;
     color: #fff;
     display: flex;
@@ -1798,11 +1799,13 @@ padding: 10px;
 .benefit-td-mark_list-img{
     width: 80px;
     height: 80px;
-    background: blue;
-    border: 3px solid #0807a1;
+    background: #fff;
+    border: 5px solid #0e34ed;
     border-radius: 50%;
     margin: 0 auto 5px;
     overflow: hidden;
+    padding: 15px;
+    box-shadow: 0px 5px 10px 5px rgb(13 14 16 / 39%);
 }
 .benefit-td-mark_list-img img{
   height: 100%;
@@ -1847,11 +1850,13 @@ padding: 10px;
     margin: 15px 0;
 }
 .td-mark_symbol{
-  max-width:100px;
-  height: 100px;
-  background:#676767 ;
-  overflow: hidden;
-  border: 1px solid #676767;
+    max-width: 100px;
+    height: 100px;
+    background: #ffffff;
+    overflow: hidden;
+    border: 4px solid #0e34ed;
+    box-shadow: 0px 8px 12px 2px rgb(13 14 16 / 39%);
+    padding: 15px;
 }
 .td-mark_symbol img{
   width: 100%;
@@ -1965,16 +1970,18 @@ button a:hover {
    font-size: 24px;
 }
 .td-mark-item_img-holder{
-   max-width: 50px;
-   height: 50px;
-   background: #333;
-   margin-right: 10px;
-   overflow: hidden;
-   margin-bottom: 10px;
-   border: 1px solid #676767;
+    width: 50px;
+    height: 50px;
+    /* background: #dedcff; */
+    background: #fff;
+    margin-right: 10px;
+    padding: 3px;
+    margin-bottom: 10px;
+    border: 2px solid #0e34ed;
+    box-shadow: 0px 8px 12px 2px rgb(13 14 16 / 39%);
 }
 .td-mark-item_img-holder img{
-  width: 100%;
+  /* width: 100%; */
   height: 100%;
   object-fit: cover;
 }
@@ -2096,7 +2103,7 @@ input[type="checkbox"]:focus{
 }
 .fssai_img{
   border: 1px solid #0642ee;
-  height: 1529px;
+  /* height: 1529px; */
   overflow: hidden;
 }
 .fssai-process_outter{
@@ -2411,19 +2418,41 @@ box-shadow: 0px 0px 20px 7px rgba(0, 0, 0, 0.18);
  box-shadow: 0px 0px 20px 7px rgba(0, 0, 0, 0.18) ;
 }
 /* ********* ISO ***********/
+.iso-banner-item{
+  padding-top: 80px;
+}
+.iso-banner-item h1{
+ color: #24344d;
+ font-weight: 700;
+ padding-bottom: 20px;
+}
+.iso-banner-item p{
+  margin-bottom: 0;
+}
+.iso-banner-girl{
+  text-align: center;
+  padding-top: 35px;
+}
+.iso-banner-girl img{
+ height: 395px;
+}
+.iso-rg-pkg{
+  padding: 15px;
+}
 .iso-banner_outter{
   background: url('../images/conscompl_banner.jpg') no-repeat;
   background: #6dc0f2;
   background-size: cover;
   background-position: 100% 100%;
-  padding: 80px 0;
+  /* padding: 80px 0; */
 }
 .iso-banner_form{
- display: flex;
- justify-content: flex-end;
+ /* display: flex;
+ justify-content: flex-end; */
+ padding: 40px 0;
 }
 .iso_from{
-  width: 415px;
+  /* width: 415px; */
   background: #b6b6b6 !important;
   box-shadow: 0px 4px 5px 2px rgb(39 38 39 / 29%);
 }
@@ -2493,7 +2522,7 @@ box-shadow: 0px 0px 20px 7px rgba(0, 0, 0, 0.18);
 }
 /* ******** ice **********/
 .ice_img{
-  height: 1215px;
+  height: 979px;
   border: 1px solid #0642ee;
   overflow: hidden;
 }
@@ -2535,7 +2564,7 @@ box-shadow: 0px 0px 20px 7px rgba(0, 0, 0, 0.18);
   width: 150px;
   height: 150px;
   background: #0a5bea;
-  padding: 0;
+  padding: 15px;
 }
 .iec-img-box img{
   /* width: 100%; */
@@ -2598,6 +2627,7 @@ box-shadow: 0px 0px 20px 7px rgba(0, 0, 0, 0.18);
 }
 .ice-whn-code{
   padding: 15px;
+  text-align: center;
 }
 .ice-whn-code h2{
   color:#0a5bea ;
@@ -2613,6 +2643,7 @@ box-shadow: 0px 0px 20px 7px rgba(0, 0, 0, 0.18);
 .iec-whn-req1{
   padding: 20px 0 0 10px;
   display: flex;
+  text-align: left;
 }
 .iec-whn-req1 label{
   display: flex;
@@ -2695,4 +2726,114 @@ box-shadow: 0px 0px 20px 7px rgba(0, 0, 0, 0.18);
 }
 .form-width{
   max-width: 80%;
+}
+.iso-process-1{
+    position: relative;
+    background: url(../images/process-1.png)no-repeat;
+    width: 296px;
+    height: 602px;
+    background-size: cover;
+    /* background-position: center center; */
+    text-align: center;
+    display: flex;
+    margin: 0 auto;
+    justify-content: center;
+    flex-direction: column;
+    /* padding: 20px; */
+}
+
+.iso-process-2{
+    position: relative;
+    background: url(../images/process-2.png)no-repeat;
+    width: 296px;
+    height: 602px;
+    background-size: cover;
+    /* background-position: center center; */
+    text-align: center;
+    display: flex;
+    margin: 0 auto;
+    justify-content: center;
+    flex-direction: column;
+    padding: 20px;
+}
+.iso-process-3{
+    position: relative;
+    background: url(../images/process-3.png)no-repeat;
+    width: 296px;
+    height: 602px;
+    background-size: cover;
+    /* background-position: center center; */
+    text-align: center;
+    display: flex;
+    margin: 0 auto;
+    justify-content: center;
+    flex-direction: column;
+    padding: 20px;
+}
+.iso-process-number-outter{
+    padding: -26px;
+}
+.iso-process-4{
+    position: relative;
+    background: url(../images/process-4.png)no-repeat;
+    width: 296px;
+    height: 602px;
+    background-size: cover;
+    /* background-position: center center; */
+    text-align: center;
+    display: flex;
+    margin: 0 auto;
+    justify-content: center;
+    flex-direction: column;
+    padding: 20px;
+}
+.iso-process-number{
+    position: relative;
+    padding: 146px 49px 0 0;
+
+}
+.step-1{
+    padding: 170px 49px 0 0;
+}
+.step-4{
+    padding: 107px 49px 0 0;
+}
+.iso-process-number h5{
+   text-align: center;
+    font-size: 13px;
+    font-weight: 700;
+    margin-bottom: 0;
+}
+.iso-process-number p{
+    margin-bottom: 0;
+    font-size: 12px;
+    font-weight: 600;
+    padding: 5px 15px;
+}
+.ice_process-text-head h1{
+    width: 152px;
+    border-bottom: 4px solid #0e72c8;
+    padding-bottom: 10px;
+    text-align: center;
+    margin: auto;
+}
+.explore-all-class{
+  position: relative;
+  background: #fff;
+  padding: 40px 0;
+  display: none;
+}
+.class-sec{
+  border: 1px solid #888;
+  padding: 40px;
+  text-align: left;
+}
+.class-sec h3{
+ color: #154bf4;
+ padding-bottom: 10px;
+}
+.class-sec p{
+  font-size: 15px;
+  padding-left: 5px;
+  text-align: justify;
 }
