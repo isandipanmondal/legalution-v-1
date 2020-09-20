@@ -454,4 +454,23 @@ function iec($request){
     return_response($response_data);
 }
 
+//ISO SECTION 
+function iso($request){
+    $name = isset($request['name'])?$request['name']:'';
+    $email = isset($request['email'])?$request['email']:'';
+    $phone = isset($request['phone'])?$request['phone']:'';
+    $certificate_type = isset($request['certificate_type'])?$request['certificate_type']:'';
+    //now send a mail to admin about the user
+    $subject="Customer looking for ISO certificate.";
+    $message = "Hi,\nCustomers details are as follows\n";
+    $message .="\nCustomer Name : ".$name;
+    $message .="\nCustomer Phone : ".$phone;
+    $message .="\nCustomer Email : ".$email;
+    $message = "\Certificate Type : ".$certificate_type;
+    //now send the mail 
+    send_mail($subject,$message);
+    $GLOBALS['response_status']=1;
+    $GLOBALS['response_message']="Thank you for contacting us. We get back to you very soon.";
+    return_response();
+}
 ?>
