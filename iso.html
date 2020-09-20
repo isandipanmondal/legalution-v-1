@@ -211,6 +211,13 @@
       <div class="valid-feedback">Valid.</div>
       <div class="invalid-feedback">Please fill out this field.</div>
       </div>
+      <div class="form-group">
+        <select class="form-control" name="certificate_type">
+          <option value="">Select Certificate Type</option>
+          <option value="cert 1">Cert 1</option>
+          <option value="cert 2">Cert 2</option>
+        </select>
+      </div>
 
       <div class="text-center"><button type="Submit" class="btn btn-primary btn_width bg-white td-mark_btn" style="color:#333;">GET STARTED</button></div>
   </form> 
@@ -1080,12 +1087,15 @@ $(document).ready(function(){
         phone:{
           required:true,
           digits:10
-        }
+        },
+        certificate_type:{
+          required:true,
+        },
       },
       errorClass:'text-danger',
       submitHandler:function(form){
         let data = $(form).serializeArray();
-        doAjaxCall('free_advice',data,function(error, result){
+        doAjaxCall('iso',data,function(error, result){
           if(error){
             alert(error);
           }
