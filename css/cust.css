@@ -721,6 +721,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2a91ff', end
 .button_grup{
  margin-bottom:40px;
  display: flex;
+ flex-wrap: wrap;
 }
 .choose_img img{
   padding-bottom: 40px;
@@ -1985,6 +1986,12 @@ button a:hover {
   height: 100%;
   object-fit: cover;
 }
+.w-135{
+ width: 135px;
+}
+.w-130{
+ width: 130px;
+}
 /* =================23-8-20 ===================*/
 /**************** Fssai ***********/
 .fssai-food-license_outter{
@@ -2043,8 +2050,9 @@ button a:hover {
   background: #eeeeee;
 }
 .from_sec-2{
-  padding: 20px 0;
+ /*  padding: 20px 0; */
   border-bottom: 1px solid #d1cfd0;
+  margin-bottom: 20px;
 }
 .from_sec-2 h2{
   font-size: 19px;
@@ -2159,6 +2167,7 @@ input[type="checkbox"]:focus{
 }
 .food_text h3{
   font-size: 20px;
+  padding: 0 10px;
 }
 .food_text p{
   font-size: 15px;
@@ -2228,8 +2237,8 @@ input[type="checkbox"]:focus{
     max-width: 200px;
     box-shadow: 0px 0px 20px 7px rgba(0, 0, 0, 0.18) !important;
     height: 177px;
-    padding: 10px;
-    background: #f6f6f6;
+    padding: 15px;
+    background: #fff;
     box-shadow: none;
     transform: scale(1.0);
     transition: 0.8s all;
@@ -2651,9 +2660,10 @@ box-shadow: 0px 0px 20px 7px rgba(0, 0, 0, 0.18);
 .iec-whn-req1 label span{
   font-size: 15px;
   margin-top: -3px;
+  /* padding-left: 10px; */
 }
 .iec-whn-req1 input[type="checkbox"] + label:before{
-  width: 36px;
+  width: 48px;
   height: 23px;
   background: #0e72c8;
   border: 1px solid #0e72c8;
@@ -2663,11 +2673,11 @@ box-shadow: 0px 0px 20px 7px rgba(0, 0, 0, 0.18);
   padding-top: 3px;
 }
 .req2 input[type="checkbox"] + label:before{
-  width: 30px;
+  width: 35px;
   height: 23px;
 }
 .req3 input[type="checkbox"] + label:before{
-  width: 50px;
+  width: 35px;
   height: 23px;
 }
 .fees-from-cntr{
@@ -2824,9 +2834,16 @@ box-shadow: 0px 0px 20px 7px rgba(0, 0, 0, 0.18);
   display: none;
 }
 .class-sec{
-  border: 1px solid #888;
+  /* border: 2px solid #154bf4; */
+  background: #fff;
   padding: 40px;
   text-align: left;
+  box-shadow: 0px 9px 15px 3px rgba(0,0,0,0.16);
+  transition: 0.8s all;
+
+}
+.class-sec:hover{
+  transform: scale(1.1);
 }
 .class-sec h3{
  color: #154bf4;
@@ -2836,4 +2853,77 @@ box-shadow: 0px 0px 20px 7px rgba(0, 0, 0, 0.18);
   font-size: 15px;
   padding-left: 5px;
   text-align: justify;
+}
+.our-associated_outter{
+  background-color: #a1a4a7;
+  width: 100%;
+  padding: 10px 0;
+}
+.our-associated{
+  padding-top: 8px;
+}
+.our-associated h3{
+  color: #fff;
+  font-size: 24px;
+}
+.partner-item{
+    width: 100%;
+    position: relative;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+#owl-four{
+  margin-bottom: 0;
+  height: 97px;
+}
+#owl-four .owl-carousel , #owl-four .owl-stage-outer{
+   padding-bottom: 0 !important;
+}
+#owl-four .item{
+  padding: 15px;
+}
+
+#owl-four .owl-nav{
+  display: block;
+}
+
+#owl-four .owl-nav button{
+  font-size: 18px;
+  outline: 0;
+}
+ #owl-four button.owl-prev span, 
+ #owl-four button.owl-next span {
+    /* opacity: 1; */
+    font-size: 48px !important;
+    color: #fff;
+    line-height: 0px;
+}
+
+.blk{
+  margin-bottom: 0;
+  height: 97px;
+}
+.blk .owl-carousel , .blk .owl-stage-outer{
+   padding-bottom: 0 !important;
+}
+
+.blk .owl-nav{
+  display: block;
+}
+
+.blk .owl-nav button{
+  font-size: 18px;
+  outline: 0;
+}
+
+.blk button.owl-prev span, 
+.blk button.owl-next span {
+    /* opacity: 1; */
+    font-size: 48px !important;
+    color: #000 !important;
+    line-height: 0px;
+}
+.blk .item{
+  /* border: 1px solid red; */
+  padding: 0  !important;
 }

@@ -1273,6 +1273,15 @@ font-size: 20px;
 #siteseal{
   margin: 0 auto;
 }
+.our-associated h3 {
+    color: #fff;
+    font-size: 18px;
+    text-align: center;
+}
+#owl-four{
+  margin-bottom: 0;
+  height: 100%;
+}
 }
 
 @media only screen and (max-width: 667px){
@@ -1831,7 +1840,19 @@ font-size: 20px;
 .iso-banner_form {
     justify-content: center;
 }
-
+#owl-four .owl-nav {
+    display: block;
+    width: 0;
+    top: 0;
+    position: relative;
+    margin: auto;
+}
+.our-associated h3 {
+    color: #fff;
+    padding-bottom: 20px;
+    font-size: 18px;
+    text-align: center;
+}
 }
 
 
@@ -2038,7 +2059,7 @@ font-size: 20px;
     width: 40px;
 }
 .req3 input[type="checkbox"] + label:before {
-    width: 61px;
+    width: 42px;
 }
 }
 @media only screen and (max-width: 380px){
@@ -2058,7 +2079,7 @@ font-size: 20px;
     width: 40px;
 }
 .req3 input[type="checkbox"] + label:before {
-    width: 61px;
+    width: 42px;
 }
  .ice-whn-code h2 {
     font-size: 25px;
