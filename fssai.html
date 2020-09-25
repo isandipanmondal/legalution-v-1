@@ -272,8 +272,8 @@
               <!-- <h2>Type of Activity </h2> -->
 
                <div class="from-item-1 form-inline pt-4">
-                <label for="email" class="mr-sm-4">Type of Activity</label>
-                <select name="company_trunover" class="form-control valid" id="serv" aria-invalid="false">
+                <label for="activity_type" class="mr-sm-4">Type of Activity</label>
+                <select name="activity_type" class="form-control valid" aria-invalid="false">
                     <option value="">Type of Activity</option>
                     <option value="RTI Application">RTI Application</option>
                     <option value="MSME Application">MSME Application</option>
@@ -1022,14 +1022,6 @@ $(document).ready(function(){
       setTimeout(function(){
         fssai_lebel_selection();
       },0000);
-    });
-
-    //only one need to be checked
-    $("input[name='activity_type']").bind('click',function(e){
-      if($(this).is(":checked")){
-        $("input[name='activity_type']").prop('checked',false);
-        $(this).prop('checked',true);
-      }
     });
 
     $("#form_fssai").validate({
