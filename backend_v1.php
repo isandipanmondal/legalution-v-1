@@ -88,10 +88,10 @@ function trademark($request){
             $message .="\nCustomer Name : ".$name;
             $message .="\nCustomer Phone : ".$phone;
             $message .="\nCustomer Email : ".$email;
-            $message = "\nCustomer looking for \n";
-            $message = "\nTrademark : ".$trademark_option;
-            $message = "\nPrice : Rs. ".number_format($price,2);
-            $message = "\nTransaction ID : ".$transaction_id;
+            $message .= "\nCustomer looking for \n";
+            $message .= "\nTrademark : ".$trademark_option;
+            $message .= "\nPrice : Rs. ".number_format($price,2);
+            $message .= "\nTransaction ID : ".$transaction_id;
             //now send the mail 
             send_mail($subject,$message);
 
@@ -137,15 +137,15 @@ function trademark_plan($request){
             $message .="\nCustomer Email : ".$email;
             $message .="\Plan Name : ".$plan_name;
             $message .="\Plan Price : ".$price;
-            $message = "\nCustomer adress as follows\n";
-            $message = "\nAddress :".$address;
-            $message = "\nState :".$state;
-            $message = "\nPIN :".$pin_code;
-            $message = "\nCustomer company details as follows\n";
-            $message = "\nCompany Name :".$company_name;
-            $message = "\nGST No. :".$gst_no;
+            $message .= "\nCustomer adress as follows\n";
+            $message .= "\nAddress :".$address;
+            $message .= "\nState :".$state;
+            $message .= "\nPIN :".$pin_code;
+            $message .= "\nCustomer company details as follows\n";
+            $message .= "\nCompany Name :".$company_name;
+            $message .= "\nGST No. :".$gst_no;
 
-            $message = "\nTransaction ID : ".$transaction_id;
+            $message .= "\nTransaction ID : ".$transaction_id;
             //now send the mail 
             send_mail($subject,$message);
 
@@ -260,16 +260,16 @@ function fssai($request){
             $message .="\nCustomer Phone : ".$phone;
             $message .="\nCustomer Email : ".$email;
             $message .="\FSSAI For : ".$fssai_option;
-            $message = "\nCustomer Company details as follows\n";
-            $message = "\nCompany Name : ".$company_name;
-            $message = "\nCompany Trunover : ".$company_trunover;
-            $message = "\nProduct Name : ".$product_name;
-            $message = "\nAddress :".$company_address;
-            $message = "\nState :".$state;
-            $message = "\nPIN :".$pin_code;
-            $message = "\nType Of Activity :".$activity_type;
+            $message .= "\nCustomer Company details as follows\n";
+            $message .= "\nCompany Name : ".$company_name;
+            $message .= "\nCompany Trunover : ".$company_trunover;
+            $message .= "\nProduct Name : ".$product_name;
+            $message .= "\nAddress :".$company_address;
+            $message .= "\nState :".$state;
+            $message .= "\nPIN :".$pin_code;
+            $message .= "\nType Of Activity :".$activity_type;
 
-            $message = "\nTransaction ID : ".$transaction_id;
+            $message .= "\nTransaction ID : ".$transaction_id;
             //now send the mail 
             send_mail($subject,$message);
 
@@ -303,7 +303,7 @@ function free_advice($request){
     $message .="\nCustomer Phone : ".$phone;
     $message .="\nCustomer Email : ".$email;
     if(!empty($advice_for)){
-        $message = "\n consultation on ".ucwords($advice_for);
+        $message .= "\n consultation on ".ucwords($advice_for);
     }
     //now send the mail 
     send_mail($subject,$message);
@@ -344,7 +344,7 @@ function apeda_plan($request){
             $message = "\nState :".$state;
             $message = "\nPIN :".$pin_code;
             */
-            $message = "\nTransaction ID : ".$transaction_id;
+            $message .= "\nTransaction ID : ".$transaction_id;
             //now send the mail 
             send_mail($subject,$message);
 
@@ -430,15 +430,15 @@ function iec($request){
         $message .="\nCustomer Name : ".$name;
         $message .="\nCustomer Phone : ".$phone;
         $message .="\nCustomer Email : ".$email;
-        $message = "\nCustomer Company details as follows\n";
-        $message = "\nCompany Name : ".$company_name;
-        $message = "\nCompany Type : ".$company_type;
-        $message = "\nPAN : ".$pan_no;
-        $message = "\nAddress :".$company_address;
-        $message = "\nState :".$state;
-        $message = "\nPIN :".$pin_code;
+        $message .= "\nCustomer Company details as follows\n";
+        $message .= "\nCompany Name : ".$company_name;
+        $message .= "\nCompany Type : ".$company_type;
+        $message .= "\nPAN : ".$pan_no;
+        $message .= "\nAddress :".$company_address;
+        $message .= "\nState :".$state;
+        $message .= "\nPIN :".$pin_code;
 
-        $message = "\nTransaction ID : ".$transaction_id;
+        $message .= "\nTransaction ID : ".$transaction_id;
         //now send the mail 
         send_mail($subject,$message);
 
@@ -466,7 +466,7 @@ function iso($request){
     $message .="\nCustomer Name : ".$name;
     $message .="\nCustomer Phone : ".$phone;
     $message .="\nCustomer Email : ".$email;
-    $message = "\Certificate Type : ".$certificate_type;
+    $message .= "\Certificate Type : ".$certificate_type;
     //now send the mail 
     send_mail($subject,$message);
     $GLOBALS['response_status']=1;
